@@ -1,0 +1,13 @@
+<!--투표 결과로 각 질문마다 투표 카운트를 보여주는 화면-->
+
+<h1>{{ question.question_text }}</h1>
+
+<ul>
+  {% for choice in question.choice_set.all %}
+  <li>
+    {{ choic.choic_text }} - {{ choice.votes }} vote{{ choice.votes|pluralize }}
+  </li>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'polls:detail' question.id %}Vote again?"></a>
