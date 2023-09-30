@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [ '192.168.56.101', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'polls.apps.PollsConfig', #추가
+    'books', #추가
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,6 +59,7 @@ TEMPLATES = [
         'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
+            'string_if_invalid': 'Invalid variable!',
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -122,3 +124,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
