@@ -1,0 +1,13 @@
+{% extends "base_books.html" %}
+
+{% block content %}
+  <h2>Publisher List</h2>
+  <ul>
+    {% for publisher in object_list %}
+      <li>
+        <!--book 객체의 title 속성(book.title)을 표시하고 해당 텍스트를 클릭하는 경우 <a href> 태그 그닝에 의해 books:book_detail URL 패턴으로 웹 요청을 보냄-->
+        <a href="{% url 'books:publisher_detail' book.id %}">{{ publisher.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}
